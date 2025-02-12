@@ -26,7 +26,7 @@ export default function Item({item}: ItemProps) {
 
       <aside className="item-meta text-gray-700 dark:text-gray-200 text-sm">
         <span className="item-date font-bold mr-1">{created_at.substring(0,10)}</span>
-        <span className="item-time mx-1">{`${created_at.substring(11,16)}`}</span>
+        <span className="item-time mx-1">{`${created_at.substring(11,16)} UTC`}</span>
         <span className="item-skor mx-1">({points} pts)</span>
         <span className="item-host ml-1 text-gray-400">via {getURLHost(url)}</span>                    
       </aside>
