@@ -5,6 +5,8 @@ import Item from "../../../components/item"
 import { text } from "../../../components/text"
 import { getData } from "../../../util/data"
 
+import Note from "../../../components/note"
+
 interface MainProps {
   params: {
     slug: string
