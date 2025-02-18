@@ -5,6 +5,7 @@ import Item from "../../components/item"
 import { text } from "../../components/text"
 import { getData, getNextYear, getUnixDate } from "../../util/data"
 import { OmniForm } from "./form"
+import Note from "../../components/note"
 
 interface OmniProps {
   searchParams: {    
@@ -46,6 +47,8 @@ export default async function Omni({searchParams}: OmniProps) {
       </PageNavi>    
     
       <MainDiv className="mt-16"> 
+
+        <Note />
 
         { (after !== '' || before !== '') && 
           <div className="text-xl">

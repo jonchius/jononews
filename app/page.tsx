@@ -4,6 +4,7 @@ import { MainDiv, MainList } from "../components/main"
 import Item from "../components/item"
 import { text } from "../components/text"
 import { getData } from "../util/data"
+import Note from "../components/note"
 
 interface MainProps {
   searchParams: {    
@@ -29,7 +30,9 @@ export default async function Main({searchParams}: MainProps) {
         <NaviPage term={``} current={page} points={points} />
       </PageNavi>    
     
-      <MainDiv className="my-16">  
+      <MainDiv className="my-16">          
+
+        <Note />
         
         { list.length > 0 && 
         

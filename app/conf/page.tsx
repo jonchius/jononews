@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { MainDiv } from '../../components/main'
-// import { getCookie, setCookie } from './conf'
+import { setCookie } from './cook'
 
 export default function Main() {
 
@@ -13,8 +13,8 @@ export default function Main() {
   const handlePointInputChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     event.preventDefault()
     setPointsThreshold(Number(event.target.value))
-    // localStorage.setItem("jn-points", event.target.value)
-    // setCookie("jn-points", event.target.value, 30)
+    localStorage.setItem("jn-points", event.target.value)
+    setCookie("jn-points", event.target.value, 30)
     
   }
 

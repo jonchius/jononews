@@ -4,6 +4,7 @@ import { MainDiv, MainList } from "../../../components/main"
 import Item from "../../../components/item"
 import { text } from "../../../components/text"
 import { getData, getSomeYear, getThisYear, getNextYear } from "../../../util/data"
+import Note from "../../../components/note"
 
 interface MainProps {
   params: {
@@ -38,6 +39,8 @@ export default async function Main({params, searchParams}: MainProps) {
       </PageNavi>    
     
       <MainDiv className="mt-16">  
+
+        <Note />
         
         { list.length > 0 && 
         

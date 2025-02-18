@@ -34,6 +34,8 @@ export default async function Main({params, searchParams}: MainProps) {
       </PageNavi>    
     
       <MainDiv className="mt-16">  
+
+        <Note />
         
         { list.length > 0 && 
         
