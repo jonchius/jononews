@@ -53,8 +53,8 @@ export const NaviPage = (
 
   return (
     <div className="navi-page flex gap-5">
-      { newerPage > 0 && <Link href={getURL(newerPage)}>newer</Link>}
-      { olderPage > 0 && <Link href={getURL(olderPage)}>older</Link>}      
+      { newerPage > 0 && <Link href={getURL(newerPage)} className="dark:text-black">newer</Link>}
+      { olderPage > 0 && <Link href={getURL(olderPage)} className="dark:text-black">older</Link>}      
     </div>
   )
 }  

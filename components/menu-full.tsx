@@ -50,8 +50,8 @@ export function MenuFull() {
     return (
       <div>
         <button className={`text-sm uppercase`} onClick={openMenu} id="open-menu">
-          <span className={`mr-1 text-2xl`} aria-hidden={true}>≡</span>
-          <span className={`mx-1 text-2xl`}>{text['menu']}</span>
+          <span className={`mr-1 text-sm md:text-2xl`} aria-hidden={true}>≡</span>
+          <span className={`mx-1 text-sm md:text-2xl`}>{text['menu']}</span>
           <span className={`ml-1 text-gray-400 hidden sm:inline`}>(⌘/)</span>
         </button>
       </div>
@@ -116,7 +116,7 @@ export function MenuFull() {
     return (
       <div 
         className={`menu-options 
-          flex justify-right gap-5 mb-10
+          flex flex-col md:flex-row text-center md:justify-right gap-5 mb-10 md:mb-0
         `}
       >
         {children}
@@ -145,7 +145,7 @@ export function MenuFull() {
     return (
       <div 
         className={`menu-theme
-          mt-5
+          md:mt-5
         `}
       >
         <button onClick={handleTheme}>

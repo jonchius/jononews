@@ -47,13 +47,13 @@ export default function Head() {
   
   const HeaderBrandingTagline = () => {
     return (
-      <div className="head-line text-md block">{site["tagline"]}</div>
+      <div className="head-line hidden md:block text-md block">{site["tagline"]}</div>
     )
   }
 
   const HeaderNavigationWrapper = ({children}: ChildrenProps) => {
     return (
-      <div className="head-navi flex items-center gap-5">
+      <div className="head-navi flex flex-col md:flex-row items-center gap-5">
         {children}
       </div>
     )
