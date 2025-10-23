@@ -134,6 +134,7 @@ export function MenuFull() {
     return (
       <ul className="menu-list list-none mx-auto py-10" onClick={closeMenu}>
         <li className="text-3xl"><Link href="/about">About</Link></li>
+        <li className="text-3xl"><Link href="/conf">Configuration</Link></li>
         <li className="text-3xl"><Link href="/omni">Omnisearch</Link></li>        
       </ul>
     )

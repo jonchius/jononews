@@ -5,12 +5,19 @@ import { getData } from "../util/data"
 import { text } from "../components/text"
 import Note from "../components/note"
 import Item from "../components/item"
+import { cookies } from "next/headers"
 
 interface MainProps {
   searchParams: {
     page?: number,
-    points?: number,
+    points?: any,
   }
+}
+
+export async function getPointsCookie() {
+  const cookieStore = cookies() 
+  const points = (await cookieStore).get('jn-points')?.value || 0
+  return points
 }
 
 export const dynamic = 'force-dynamic'
@@ -18,7 +25,9 @@ export const fetchCache = 'force-no-store'
 
 export default async function Main({searchParams}: MainProps) {
 
-  const { page = 1, points } = await searchParams
+  let { page = 1, points } = await searchParams
+  points = await getPointsCookie()
+
   const data = await getData('', page - 1, points)
   const { hits: list } = data
 

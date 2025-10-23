@@ -1,4 +1,4 @@
-'use client'
+
 import "../global.css"
 import Head from "../components/head"
 import Tail from '../components/tail'

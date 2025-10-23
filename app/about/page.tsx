@@ -27,6 +27,8 @@ export default function About() {
             <li><strong>Dark mode toggle</strong>: (inside the menu)</li>
             <li><strong>Full-screen menu</strong>: (press command-slash!)</li>
             <li><strong>URL-input compatibility</strong>: play around with the URLs in Omni to get a different filtering!</li>
+            <li><em>added 2025-10-23</em> <strong>User-generated configuration</strong> (filter by a custom quality score)</li>
+            <li><em>added 2025-10-23</em> <strong>Show comments from Hacker News</strong> (read the comments of each submitted link!)</li>
           </ul>
         </li>
       </ul>
@@ -35,9 +37,7 @@ export default function About() {
       <ul>
         <li>hoping to add some <strong>more features</strong> with time permitting:</li>
         <ul>
-          <li><strong>User-generated navigation</strong> (choose one or more keywords to personalize the menu)</li>
-          <li><strong>User-generated configuration</strong> (filter by a custom quality score)</li>
-          <li><strong>Show comments from Hacker News</strong> (read the comments of each submitted link!)</li>
+          <li><strong>User-generated navigation</strong> (choose one or more keywords to personalize the menu)</li>          
         </ul>
       </ul>
 
