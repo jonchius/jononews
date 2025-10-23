@@ -1,5 +1,5 @@
-import Link from "next/link";
-import { text } from "./text";
+import Link from "next/link"
+import { text } from "./text"
 
 export const PageNavi = ({children}: any) => {
   return (
