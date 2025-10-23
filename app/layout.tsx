@@ -1,29 +1,25 @@
+'use client'
 import "../global.css"
 import Head from "../components/head"
 import Tail from '../components/tail'
-import { ThemeProvider } from "../util/dark"
-
-export const metadata = {
-  title: 'jononews',
-  description: 'curating a free and open news line',
-}
+import { Theme } from "./theme"
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+
   return (
-    <html lang="en">
+    <html lang="en" data-arp="">
       <head>
-      <link rel="shortcut icon" href={`/favicon.png?v=${Date.now()}`} />
+        <link rel="shortcut icon" href={`/favicon.png?v=${Date.now()}`} />        
       </head>
       <body>
-        <ThemeProvider attribute={`class`} defaultTheme={`light`} enableSystem>
-          <Head />                
-          {children}        
-          <Tail />
-        </ThemeProvider>
+        <Theme />
+        <Head />                
+        {children}        
+        <Tail />      
       </body>
     </html>
   )

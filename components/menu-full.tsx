@@ -1,13 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
 import FocusTrap from 'focus-trap-react'
 import { MenuFind } from './menu-find'
 import { useHotkeys } from 'react-hotkeys-hook'
 import { ChildrenProps } from './prop'
 import { site, text } from './text'
 import Link from 'next/link'
+import { ThemeToggle } from '../app/theme'
 
 interface MenuFindWrapperProps {
   children: React.ReactNode | React.ReactNode[],
@@ -22,15 +22,6 @@ export function MenuFull() {
   useHotkeys('ctrl+k, meta+k', () => document.getElementById('desktop-search-in-nav')?.focus())
   useHotkeys('ctrl+/, meta+/', () => document.getElementById('open-menu')?.click())
   useHotkeys('escape', () => closeMenu())
-
-  /* def dark mode */
-  const { theme, setTheme } = useTheme()
-
-  const handleTheme = (event: React.FormEvent<HTMLButtonElement>): void => {
-    event.preventDefault()
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
-  /* end dark mode */
   
   /* def menu ui */
   const openMenu = () => {
@@ -116,7 +107,7 @@ export function MenuFull() {
     return (
       <div 
         className={`menu-options 
-          flex flex-col md:flex-row text-center md:justify-right gap-5 mb-10 md:mb-0
+          flex flex-col md:flex-row text-center md:justify-right items-center gap-5 mb-10 md:mb-0
         `}
       >
         {children}
@@ -127,39 +118,13 @@ export function MenuFull() {
   const MenuCloseOption = () => {
     return (
       <div 
-        className={`menu-close 
-          mt-5
-        `}
+        className={`menu-close mt-5 md:mt-0`}
       >
         <button onClick={closeMenu}>
           <span 
             aria-hidden="true" 
             className={`mr-2`}>❌</span> 
           <span>{text['close menu']}</span>
-        </button>
-      </div>
-    )
-  }
-
-  const MenuThemeOption = () => {
-    return (
-      <div 
-        className={`menu-theme
-          md:mt-5
-        `}
-      >
-        <button onClick={handleTheme}>
-          <span 
-            aria-hidden="true"
-            className={`mr-2`}>
-            {theme === 'dark' ? '💡' : '🌜' }
-          </span>
-          <span>
-            {theme === 'dark' 
-              ? text["switch to light mode"]
-              : text["switch to dark mode"]
-            }
-          </span>
         </button>
       </div>
     )
@@ -199,8 +164,8 @@ export function MenuFull() {
                   <MenuHeading />
                   <MenuTagline />
                   <MenuOptions>
-                    <MenuCloseOption />
-                    <MenuThemeOption />
+                    <MenuCloseOption />                    
+                    <ThemeToggle />
                   </MenuOptions>
                 </MenuHead>
                 <MenuFindWrapper className={`block md:hidden`}>
