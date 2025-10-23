@@ -14,7 +14,7 @@ export default function About() {
 
       <h2 className="text-5xl my-5">About</h2>
       <p>
-        a front-end mashup of Algolia's <Link href="https://hn.algolia.com/api" target="_blank">Hacker News API</Link>
+        displays tech-adjacent news headlines from the <Link href="https://hn.algolia.com/api" target="_blank">Hacker News API</Link>
       </p>
 
       <h3 className="text-3xl my-5">Features</h3>
