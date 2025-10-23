@@ -15,7 +15,7 @@ export interface ItemProps {
 
 export default function Item({item}: ItemProps) {
 
-  const { created_at, points, url, title } = item
+  const { created_at, points, url, title, objectID } = item
 
   const getURLHost = (url: string) => {
     return (url) ? new URL(url).host.toString() : ''
@@ -29,6 +29,7 @@ export default function Item({item}: ItemProps) {
         <span className="item-time mx-1">{`${created_at.substring(11,16)} UTC`}</span>
         <span className="item-skor mx-1">({points} pts)</span>
         <span className="item-host ml-1 text-gray-400">via {getURLHost(url)}</span>                    
+        <span className="item-comm ml-2"><Link className="text-green-600" href={`https://news.ycombinator.com/item?id=${objectID}`} target="_blank">comments</Link></span>
       </aside>
 
       <h3 className="item-link text-3xl">
