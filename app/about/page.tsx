@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/app/(root)/about/page.tsx
+explanation of the project
+*/
+
 import { MainDiv } from "../../components/main"
 import Link from "next/link"
 
@@ -5,13 +11,14 @@ export default function About() {
 
   return (
     <MainDiv>
+
       <h2 className="text-5xl my-5">About</h2>
       <p>
-        I mashed up this "<em>news-oriented</em>" front-end with Algolia's <Link href="https://hn.algolia.com/api" target="_blank">Hacker News API</Link>
+        a front-end mashup of Algolia's <Link href="https://hn.algolia.com/api" target="_blank">Hacker News API</Link>
       </p>
-      
-      <h3 className="text-3xl my-5">Features</h3>      
-      <ul>      
+
+      <h3 className="text-3xl my-5">Features</h3>
+      <ul>
         <li>Started with just a <strong>simple homepage list</strong> like the <Link href="https://news.ycombinator.com/" target="_blank">Hacker News home page</Link>, then:
           <ul>
             <li><strong>Filter by keyword</strong>: press command-K to filter by term!</li>
@@ -21,12 +28,12 @@ export default function About() {
             <li><strong>Full-screen menu</strong>: (press command-slash!)</li>
             <li><strong>URL-input compatibility</strong>: play around with the URLs in Omni to get a different filtering!</li>
           </ul>
-        </li>    
+        </li>
       </ul>
 
       <h3 className="text-3xl my-5">Pipeline</h3>
       <ul>
-        <li>I hope to add some <strong>more features</strong> with time permitting:</li>
+        <li>hoping to add some <strong>more features</strong> with time permitting:</li>
         <ul>
           <li><strong>User-generated navigation</strong> (choose one or more keywords to personalize the menu)</li>
           <li><strong>User-generated configuration</strong> (filter by a custom quality score)</li>
