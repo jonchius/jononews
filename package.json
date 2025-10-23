@@ -16,7 +16,6 @@
     "eslint-config-next": "^16.0.0",
     "focus-trap-react": "^10.2.3",
     "next": "^16.0.0",
-    "next-themes": "^0.2.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hotkeys-hook": "^4.4.1",
