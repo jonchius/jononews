@@ -22,8 +22,8 @@ export const fetchCache = 'force-no-store'
 
 export default async function Main({params, searchParams}: MainProps) {
 
-  const { slug = '' } = params  
-  const { page = 1, points = 0 } = searchParams
+  const { slug = '' } = await params  
+  const { page = 1, points = 0 } = await searchParams
   const data = await getData(slug, page - 1, points)
   const { hits: list } = data    
   

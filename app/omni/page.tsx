@@ -31,7 +31,7 @@ export default async function Omni({searchParams}: OmniProps) {
     pointsOp = '>=', 
     after = '', 
     before = ''
-  } = searchParams  
+  } = await searchParams  
 
   const afterUnix = getUnixDate(after) || 0
   const beforeUnix = getUnixDate(before) || getNextYear()
