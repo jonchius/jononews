@@ -11,6 +11,7 @@ import Item from "../../../components/item"
 import { text } from "../../../components/text"
 import { getData, getSomeYear, getThisYear, getNextYear } from "../../../util/data"
 import Note from "../../../components/note"
+import { cookies } from "next/headers"
 
 interface MainProps {
   params: {
@@ -18,8 +19,14 @@ interface MainProps {
   },
   searchParams: {
     page?: number,
-    points?: number
+    points?: any
   }
+}
+
+export async function getPointsCookie() {
+  const cookieStore = cookies()
+  const points = (await cookieStore).get('jn-points')?.value || 0
+  return points
 }
 
 export const dynamic = 'force-dynamic'
@@ -28,11 +35,11 @@ export const fetchCache = 'force-no-store'
 export default async function Main({params, searchParams}: MainProps) {
 
   const { slug } = await params
-  const { page = 1, points = 0 } = await searchParams
+  let { page = 1, points } = await searchParams
+  if (!points) points = await getPointsCookie()
   const { yearStart, yearEnd } = getSomeYear(slug)
   const after = yearStart ?? getThisYear()
   const before = yearEnd ?? getNextYear()
-
   const data = await getData('', page - 1, points, '>=', after, before)
   const { hits: list } = data
 

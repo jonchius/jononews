@@ -32,9 +32,8 @@ export const fetchCache = 'force-no-store'
 
 export default async function Main({searchParams}: MainProps) {
 
-  let { page = 1, points } = await searchParams
-  points = await getPointsCookie()
-
+  let { page = 1, points } = await searchParams 
+  if (!points) points = await getPointsCookie()
   const data = await getData('', page - 1, points)
   const { hits: list } = data
 

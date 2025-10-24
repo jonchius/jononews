@@ -7,11 +7,11 @@ search results by user input keyword or "term"
 import { Fragment } from "react"
 import { PageNavi, NaviName, NaviPage } from "../../../components/navi"
 import { MainDiv, MainList } from "../../../components/main"
+import Note from "../../../components/note"
 import Item from "../../../components/item"
 import { text } from "../../../components/text"
 import { getData } from "../../../util/data"
-
-import Note from "../../../components/note"
+import { cookies } from "next/headers"
 
 interface MainProps {
   params: {
@@ -19,8 +19,14 @@ interface MainProps {
   },
   searchParams: {
     page?: number,
-    points?: number
+    points?: any
   }
+}
+
+export async function getPointsCookie() {
+  const cookieStore = cookies()
+  const points = (await cookieStore).get('jn-points')?.value || 0
+  return points
 }
 
 export const dynamic = 'force-dynamic'
@@ -29,7 +35,8 @@ export const fetchCache = 'force-no-store'
 export default async function Main({params, searchParams}: MainProps) {
 
   const { slug = '' } = await params
-  const { page = 1, points = 0 } = await searchParams
+  let { page = 1, points } = await searchParams
+  if (!points) points = await getPointsCookie()
   const data = await getData(slug, page - 1, points)
   const { hits: list } = data
 

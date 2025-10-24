@@ -14,6 +14,7 @@ import { ChildrenProps } from './prop'
 import { site, text } from './text'
 import Link from 'next/link'
 import { ThemeToggle } from '../util/theme'
+import { getCookie } from '../app/conf/cook'
 
 interface MenuFindWrapperProps {
   children: React.ReactNode | React.ReactNode[],
@@ -24,6 +25,7 @@ export function MenuFull() {
 
   const [ showMenu, setShowMenu ] = useState(false)
   const [ menuOpenedAlready, setMenuOpenedAlready ] = useState(false)
+  const [ topics, setTopics ] = useState([])
 
   useHotkeys('ctrl+k, meta+k', () => document.getElementById('desktop-search-in-nav')?.focus())
   useHotkeys('ctrl+/, meta+/', () => document.getElementById('open-menu')?.click())
@@ -40,7 +42,16 @@ export function MenuFull() {
   }
 
   useEffect(() => {
-    if (menuOpenedAlready) document.getElementById('open-menu')?.focus()
+
+    // focus on menu open
+    if (menuOpenedAlready) document.getElementById('open-menu')?.focus()   
+
+    // refresh custom term links
+    const topicCookies = getCookie('jn-topics')
+    if (topicCookies) {
+      setTopics(topicCookies.split(',').map(item => item.trim()))      
+    } 
+
   }, [showMenu, menuOpenedAlready])
 
   const MenuButton = () => {
@@ -138,11 +149,32 @@ export function MenuFull() {
 
   const MenuContent = () => {
     return (
-      <ul className="menu-list list-none mx-auto py-10" onClick={closeMenu}>
-        <li className="text-3xl"><Link href="/about">About</Link></li>
-        <li className="text-3xl"><Link href="/conf">Configuration</Link></li>
-        <li className="text-3xl"><Link href="/omni">Omnisearch</Link></li>
+      <ul className="menu-list list-none mx-auto py-5" onClick={closeMenu}>
+        <li className="text-3xl"><Link href="/about">{text["about"]}</Link></li>
+        <li className="text-3xl"><Link href="/conf">{text["configuration"]}</Link></li>
+        <li className="text-3xl"><Link href="/omni">{text["omnisearch"]}</Link></li>    
       </ul>
+    )
+  }
+
+  const MenuCustom = () => {
+    return (
+      <>
+        <h2 className="text-4xl">{text["your terms"]}</h2>
+        <ul className="menu-list list-none mx-auto py-5" onClick={closeMenu}>
+          { topics && (
+            <>                        
+              {topics.map((topic: string) => (
+                <li key={`menu-customlink-${topic}`} className="text-3xl">
+                  <Link href={`/term/${topic.trim()}`}>
+                    {topic.trim()}
+                  </Link>
+                </li>
+              ))}
+            </>
+          )}
+        </ul>
+      </>
     )
   }
 
@@ -182,6 +214,7 @@ export function MenuFull() {
                   />
                 </MenuFindWrapper>
                 <MenuContent />
+                <MenuCustom />
               </MenuWrapper>
             </MenuDialog>
           </div>

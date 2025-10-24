@@ -20,7 +20,7 @@ export const PageNavi = ({children}: any) => {
 }
 
 export const NaviName = (
-  {label, page} : { label: string, page: number}
+  {label, page} : { label: string, page?: number}
 ) => {
   return (
     <h2 className="navi-name text-md md:text-3xl text-black font-bold uppercase">

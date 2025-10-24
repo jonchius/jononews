@@ -13,7 +13,9 @@ export const site = {
 export const text = {
   "menu" : "menu",
   "home" : "home",
+  "about" : "about", 
   "no items" : "no items or end of file",
+  "search" : "search", 
   "search go button" : "go",
   "search with keybinding" : "🔎 search (⌘K)",
   "close menu" : "close menu",
@@ -27,6 +29,16 @@ export const text = {
   "search term" : "search term",
   "minimum points" : "minimum upvotes",
   "article dated on or after" : "dated on/after",
-  "article dated on or before" : "dated on/before"
-
+  "article dated on or before" : "dated on/before",
+  "configuration" : "configuration",
+  "configure this page" : "configure this page",
+  "configuration intro" : "Using this page implies you agree to have these cookies on your computer:",
+  "your terms" : "your terms", 
+  "menu topics" : "menu topics",
+  "menu topics description": "list of topics to put on the menu separated by commas",
+  "points threshold" : "points threshold",
+  "points threshold description" : "how many points (votes) does a news item must have to appear on this site?",
+  "save" : "save",
+  "saved" : "saved!",
+  "omnisearch" : "omnisearch (advanced search)", 
 }
