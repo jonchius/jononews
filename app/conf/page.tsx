@@ -28,7 +28,7 @@ export default function Main() {
     event.preventDefault()
     setPointsThreshold(Number(event.target.value))
     localStorage.setItem("jn-points", event.target.value)
-    setCookie("jn-points", event.target.value, 30)
+    setCookie("jn-points", event.target.value, 36500)
   }
 
   return (
