@@ -24,18 +24,18 @@ export const NaviName = (
 ) => {
   return (
     <h2 className="navi-name text-md md:text-3xl text-black font-bold uppercase">
-      {label} 
+      {label}
       {page ? ` / ${text['page']} ${page} ` : ''}
     </h2>
   )
 }
 
 export const NaviPage = (
-  {platform, slug, current, term, points = 0, pointsOp, after, before} : { 
-    platform?: string, 
-    slug?: string, 
-    current?: number, 
-    term?: string, 
+  {platform, slug, current, term, points = 0, pointsOp, after, before} : {
+    platform?: string,
+    slug?: string,
+    current?: number,
+    term?: string,
     points?: number,
     pointsOp?: string
     after?: string,
@@ -44,11 +44,11 @@ export const NaviPage = (
 ) => {
 
   const newerPage = current ? Number(current) - 1 : 1
-  const olderPage = Number(current) + 1 
+  const olderPage = Number(current) + 1
 
   const getURL = (page) => {
     const f = platform ? `/${platform}` : ''
-    const s = slug ? `/${slug}` : ''    
+    const s = slug ? `/${slug}` : ''
     const t = term ? `&term=${term}` : ''
     const p = points ? `&points=${points}` : ''
     const o = pointsOp ? `&pointsOp=${pointsOp}` : ''
@@ -60,7 +60,7 @@ export const NaviPage = (
   return (
     <div className="navi-page flex gap-5">
       { newerPage > 0 && <Link href={getURL(newerPage)} className="dark:text-black">newer</Link>}
-      { olderPage > 0 && <Link href={getURL(olderPage)} className="dark:text-black">older</Link>}      
+      { olderPage > 0 && <Link href={getURL(olderPage)} className="dark:text-black">older</Link>}
     </div>
   )
-}  
+}

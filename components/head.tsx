@@ -43,14 +43,14 @@ export default function Head() {
       <div className={`head-ding text-4xl`}>
         <Link href="/">
           <h1>
-            <span className="head-icon mr-2" aria-hidden="true">{site["title emoji"]}</span> 
+            <span className="head-icon mr-2" aria-hidden="true">{site["title emoji"]}</span>
             <span className="head-name">{site["title"]}</span>
           </h1>
         </Link>
       </div>
     )
   }
-  
+
   const HeaderBrandingTagline = () => {
     return (
       <div className="head-line hidden md:block text-md block">{site["tagline"]}</div>
@@ -66,24 +66,24 @@ export default function Head() {
   }
 
   return (
-    <HeaderFullWidthWrapper>      
-      
+    <HeaderFullWidthWrapper>
+
       <HeaderProper>
-        
+
         <HeaderBrandingWrapper>
 
-          <HeaderBrandingName />          
+          <HeaderBrandingName />
           <HeaderBrandingTagline />
 
-        </HeaderBrandingWrapper>      
-        
-        <HeaderNavigationWrapper>        
-        
-          <MenuFind inputName="desktop-search-in-nav" placeholder={text['search with keybinding']} />          
+        </HeaderBrandingWrapper>
+
+        <HeaderNavigationWrapper>
+
+          <MenuFind inputName="desktop-search-in-nav" placeholder={text['search with keybinding']} />
           <MenuFull />
-        
+
         </HeaderNavigationWrapper>
-      
+
       </HeaderProper>
 
     </HeaderFullWidthWrapper>

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,11 +6,7 @@
 
 html {
   scroll-padding-top: 9.5rem;
-  font-family: 'Nunito', serif;  
-}
-
-h1, h2, h3, h4, h5, h6, select, aside, .menu-list {
-  font-family: 'Barlow Condensed', sans-serif;
+  font-family: 'Barlow Condensed', serif;  
 }
 
 ul {

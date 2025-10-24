@@ -1,7 +1,7 @@
 /*
 jononews by @jonchius
 /app/(root)/page.tsx
-(200) home page with latest news items 
+(200) home page with latest news items
 - optionally filtered by user-configured points threshold cookie
 */
 
@@ -22,7 +22,7 @@ interface MainProps {
 }
 
 export async function getPointsCookie() {
-  const cookieStore = cookies() 
+  const cookieStore = cookies()
   const points = (await cookieStore).get('jn-points')?.value || 0
   return points
 }

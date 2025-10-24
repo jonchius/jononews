@@ -6,13 +6,13 @@ data by @jonchius
 */
 
 export async function getData(
-  slug: string = '', 
-  page: number = 0, 
+  slug: string = '',
+  page: number = 0,
   points: number = 10,
   pointsOp: string = '>=',
   after: number = 0,
   before: number = getNextYear()
-) {  
+) {
 
   const root = `https://hn.algolia.com/api/v1/`
   const endpoint = `search_by_date`
@@ -29,7 +29,7 @@ export async function getData(
     throw new Error('Failed to fetch!')
   }
 
-  return res.json() 
+  return res.json()
 
 }
 
@@ -38,7 +38,7 @@ export function getNextYear() {
   const currentDate = new Date()
   const currentYear = currentDate.getFullYear()
   const nextYear = new Date(Date.UTC(currentYear + 1, 0, 1))
-  
+
   return nextYear.valueOf() / 1000
 
 }
@@ -55,15 +55,15 @@ export function getThisYear() {
 
 export function getSomeYear(year: string) {
 
-  const yearNum = Number(year)  
-  const isYearNumGood = Number.isInteger(yearNum)   
-  const yearStart = isYearNumGood 
-    ? new Date(Date.UTC(yearNum, 0, 1)).valueOf() / 1000 
+  const yearNum = Number(year)
+  const isYearNumGood = Number.isInteger(yearNum)
+  const yearStart = isYearNumGood
+    ? new Date(Date.UTC(yearNum, 0, 1)).valueOf() / 1000
     : getThisYear()
-  const yearEnd = isYearNumGood 
-    ? new Date(Date.UTC(yearNum + 1, 0, 1)).valueOf() / 1000 
+  const yearEnd = isYearNumGood
+    ? new Date(Date.UTC(yearNum + 1, 0, 1)).valueOf() / 1000
     : getNextYear()
-  
+
   return { yearStart, yearEnd }
 
 }

@@ -1,7 +1,7 @@
 /*
 jononews by @jonchius
 /components/prop.ts
-prop types definitions 
+prop types definitions
 */
 
 export interface ChildrenProps {

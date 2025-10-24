@@ -1,7 +1,7 @@
 /*
 jononews by @jonchius
 /components/menu-find.tsx
-search form component for navi.tsx in head.tsx 
+search form component for navi.tsx in head.tsx
 */
 
 import { useState } from 'react'
@@ -20,7 +20,7 @@ export const MenuFind = ({ inputName, placeholder }: MenuFindProps) => {
 
   const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>): void => {
     event.preventDefault()
-    router.push(`/term/${decodeURIComponent(searchTerm)}`)  
+    router.push(`/term/${decodeURIComponent(searchTerm)}`)
 
   }
 

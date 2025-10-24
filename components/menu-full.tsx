@@ -22,21 +22,21 @@ interface MenuFindWrapperProps {
 
 export function MenuFull() {
 
-  const [ showMenu, setShowMenu ] = useState(false)  
-  const [ menuOpenedAlready, setMenuOpenedAlready ] = useState(false)  
+  const [ showMenu, setShowMenu ] = useState(false)
+  const [ menuOpenedAlready, setMenuOpenedAlready ] = useState(false)
 
   useHotkeys('ctrl+k, meta+k', () => document.getElementById('desktop-search-in-nav')?.focus())
   useHotkeys('ctrl+/, meta+/', () => document.getElementById('open-menu')?.click())
   useHotkeys('escape', () => closeMenu())
-  
+
   /* def menu ui */
   const openMenu = () => {
-    setShowMenu(true) 
-    setMenuOpenedAlready(true)   
+    setShowMenu(true)
+    setMenuOpenedAlready(true)
   }
 
   const closeMenu = () => {
-    setShowMenu(false)    
+    setShowMenu(false)
   }
 
   useEffect(() => {
@@ -57,12 +57,12 @@ export function MenuFull() {
 
   const MenuDialog = ({children}: ChildrenProps) => {
     return (
-      <dialog 
-        aria-label={text['menu']} 
-        className={`menu-dialog 
+      <dialog
+        aria-label={text['menu']}
+        className={`menu-dialog
           bg-gradient-to-b from-zinc-100 to-zinc-200
           dark:from-black dark:to-gray-800
-          flex z-50 overflow-y-auto 
+          flex z-50 overflow-y-auto
           w-full h-screen fixed top-0 left-0 p-10
       `}>
         {children}
@@ -80,7 +80,7 @@ export function MenuFull() {
 
   const MenuHead = ({children}: ChildrenProps) => {
     return (
-      <div className={`menu-head 
+      <div className={`menu-head
         flex flex-col sm:flex-row sm:justify-between items-center
       `}>
         {children}
@@ -99,8 +99,8 @@ export function MenuFull() {
 
   const MenuTagline = () => {
     return (
-      <div 
-        className={`menu-tagline 
+      <div
+        className={`menu-tagline
           block sm:hidden text-center my-2
         `}
       >
@@ -111,8 +111,8 @@ export function MenuFull() {
 
   const MenuOptions = ({children} : ChildrenProps) => {
     return (
-      <div 
-        className={`menu-options 
+      <div
+        className={`menu-options
           flex flex-col md:flex-row text-center md:justify-right items-center gap-5 mb-10 md:mb-0
         `}
       >
@@ -123,13 +123,13 @@ export function MenuFull() {
 
   const MenuCloseOption = () => {
     return (
-      <div 
+      <div
         className={`menu-close mt-5 md:mt-0`}
       >
         <button onClick={closeMenu}>
-          <span 
-            aria-hidden="true" 
-            className={`mr-2`}>❌</span> 
+          <span
+            aria-hidden="true"
+            className={`mr-2`}>❌</span>
           <span>{text['close menu']}</span>
         </button>
       </div>
@@ -141,15 +141,15 @@ export function MenuFull() {
       <ul className="menu-list list-none mx-auto py-10" onClick={closeMenu}>
         <li className="text-3xl"><Link href="/about">About</Link></li>
         <li className="text-3xl"><Link href="/conf">Configuration</Link></li>
-        <li className="text-3xl"><Link href="/omni">Omnisearch</Link></li>        
+        <li className="text-3xl"><Link href="/omni">Omnisearch</Link></li>
       </ul>
     )
   }
 
   const MenuFindWrapper = ({children, className}: MenuFindWrapperProps) => {
     return (
-      <div 
-        className={`menu-find-wrapper 
+      <div
+        className={`menu-find-wrapper
           ${className}
         `}
       >
@@ -171,14 +171,14 @@ export function MenuFull() {
                   <MenuHeading />
                   <MenuTagline />
                   <MenuOptions>
-                    <MenuCloseOption />                    
+                    <MenuCloseOption />
                     <ThemeToggle />
                   </MenuOptions>
                 </MenuHead>
                 <MenuFindWrapper className={`block md:hidden`}>
-                  <MenuFind                                         
-                    inputName={`mobile-search-in-menu`} 
-                    placeholder={text['search with keybinding']} 
+                  <MenuFind
+                    inputName={`mobile-search-in-menu`}
+                    placeholder={text['search with keybinding']}
                   />
                 </MenuFindWrapper>
                 <MenuContent />
