@@ -214,7 +214,7 @@ export function MenuFull() {
                   />
                 </MenuFindWrapper>
                 <MenuContent />
-                <MenuCustom />
+                { topics.length > 0 && <MenuCustom />}
               </MenuWrapper>
             </MenuDialog>
           </div>
