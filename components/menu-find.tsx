@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/menu-find.tsx
+search form component for navi.tsx in head.tsx 
+*/
+
 import { useState } from 'react'
 import { useRouter } from "next/navigation"
 import { text } from './text'

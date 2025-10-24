@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/app/(root)/conf/cook.tsx
+cookie functions for configuration conf/page.tsx
+*/
+
 'use client'
 
 export function setCookie(cname, cvalue, exdays) {

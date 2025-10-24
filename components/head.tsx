@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/head.tsx
+header component with branding + navigation menu
+*/
+
 'use client'
 
 import Link from "next/link"

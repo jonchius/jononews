@@ -1,7 +1,13 @@
+/*
+jononews by @jonchius
+/components/text.tsx
+text strings for localization potential
+*/
+
 export const site = {
   "title emoji": "📰",
   "title" : "JONONEWS", 
-  "tagline" : "simply search and read interesting articles",
+  "tagline" : "customized news",
 }
 
 export const text = {

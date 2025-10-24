@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/item.tsx
+news item template
+*/
+
 'use client'
 
 import Link from "next/link"

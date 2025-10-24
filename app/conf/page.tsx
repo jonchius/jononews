@@ -1,3 +1,10 @@
+/*
+jononews by @jonchius
+/app/(root)/conf/page.tsx
+configuration for users
+- set points threshold to filter news items by upvotes
+*/
+
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -7,21 +14,21 @@ import { setCookie } from './cook'
 export default function Main() {
 
   let defaultPointsThreshold = 0
-  
+
   const [pointsThreshold, setPointsThreshold] = useState(defaultPointsThreshold)
 
   useEffect(() => {
-    setPointsThreshold(Number(localStorage.getItem("jn-points")) || 0)  
+    setPointsThreshold(Number(localStorage.getItem("jn-points")) || 0)
   }, [])
-  
-  
-  // const [topicsMenu, setTopicsMenu] = useState([])
+
+
+  // TODO : insert input field to customize menu by topics
 
   const handlePointInputChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
     event.preventDefault()
     setPointsThreshold(Number(event.target.value))
     localStorage.setItem("jn-points", event.target.value)
-    setCookie("jn-points", event.target.value, 30)    
+    setCookie("jn-points", event.target.value, 30)
   }
 
   return (
@@ -43,7 +50,7 @@ export default function Main() {
           <option value="90">90+</option>
           <option value="100">100+ (only the most liked!)</option>
         </select>
-      </form>          
+      </form>
     </MainDiv>
   )
 

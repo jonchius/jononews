@@ -1,3 +1,9 @@
+/*
+theme toggle by @jonchius
+/util/theme.tsx
+theme (light mode / dark mode / etc.) toggler
+*/
+
 'use client'
 
 import { useState, useEffect } from "react"

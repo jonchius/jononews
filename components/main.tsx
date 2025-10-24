@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/main.tsx
+main or div html containers
+*/
+
 export const MainDiv = ({children, className}: any) => {
   return (
     <main className={`p-5 ${className}`}>

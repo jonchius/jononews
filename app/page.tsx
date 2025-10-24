@@ -1,3 +1,10 @@
+/*
+jononews by @jonchius
+/app/(root)/page.tsx
+(200) home page with latest news items 
+- optionally filtered by user-configured points threshold cookie
+*/
+
 import { Fragment } from "react"
 import { PageNavi, NaviName, NaviPage } from "../components/navi"
 import { MainDiv, MainList } from "../components/main"

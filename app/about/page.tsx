@@ -37,7 +37,7 @@ export default function About() {
       <ul>
         <li>hoping to add some <strong>more features</strong> with time permitting:</li>
         <ul>
-          <li><strong>User-generated navigation</strong> (choose one or more keywords to personalize the menu)</li>          
+          <li><strong>User-generated navigation</strong> (choose one or more keywords to personalize the menu)</li>
         </ul>
       </ul>
 

@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/navi.tsx
+breadcrumbs and "newer/older" navigation
+*/
+
 import Link from "next/link"
 import { text } from "./text"
 

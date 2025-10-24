@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/app/(root)/year/page.tsx
+search results by year of publication
+*/
+
 import { Fragment } from "react"
 import { PageNavi, NaviName, NaviPage } from "../../../components/navi"
 import { MainDiv, MainList } from "../../../components/main"
@@ -10,7 +16,7 @@ interface MainProps {
   params: {
     slug: string
   },
-  searchParams: {    
+  searchParams: {
     page?: number,
     points?: number
   }
@@ -21,37 +27,37 @@ export const fetchCache = 'force-no-store'
 
 export default async function Main({params, searchParams}: MainProps) {
 
-  const { slug } = await params  
+  const { slug } = await params
   const { page = 1, points = 0 } = await searchParams
   const { yearStart, yearEnd } = getSomeYear(slug)
   const after = yearStart ?? getThisYear()
   const before = yearEnd ?? getNextYear()
 
   const data = await getData('', page - 1, points, '>=', after, before)
-  const { hits: list } = data    
-  
+  const { hits: list } = data
+
   return (
     <>
 
       <PageNavi>
         <NaviName label={slug} page={page} />
         <NaviPage platform="year" slug={slug} current={page} points={points} />
-      </PageNavi>    
-    
-      <MainDiv className="mt-16">  
+      </PageNavi>
+
+      <MainDiv className="mt-16">
 
         <Note />
-        
-        { list.length > 0 && 
-        
+
+        { list.length > 0 &&
+
           <MainList>
-            {list.map((item: any) =>              
-              <Fragment key={item.objectID}>                
+            {list.map((item: any) =>
+              <Fragment key={item.objectID}>
                 {item.url && <Item item={item} /> }
               </Fragment>
-            )}                      
+            )}
           </MainList>
-        
+
         }
 
         {list.length === 0 && (

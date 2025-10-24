@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/note.tsx
+alert message on top of main content
+*/
+
 import Link from "next/link"
 export default function Note() {
   return (

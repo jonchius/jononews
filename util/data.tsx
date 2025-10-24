@@ -1,3 +1,10 @@
+/*
+data by @jonchius
+/util/data.tsx
+- fetch data from hn.algolia.com API
+- date calculation utility functions
+*/
+
 export async function getData(
   slug: string = '', 
   page: number = 0, 

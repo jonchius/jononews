@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/components/menu-full.tsx
+full screen menu component
+*/
+
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -7,7 +13,7 @@ import { useHotkeys } from 'react-hotkeys-hook'
 import { ChildrenProps } from './prop'
 import { site, text } from './text'
 import Link from 'next/link'
-import { ThemeToggle } from '../app/theme'
+import { ThemeToggle } from '../util/theme'
 
 interface MenuFindWrapperProps {
   children: React.ReactNode | React.ReactNode[],

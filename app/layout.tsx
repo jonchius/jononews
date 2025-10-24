@@ -1,8 +1,13 @@
+/*
+jononews by @jonchius
+/app/(root)/layout.tsx
+general layout page
+*/
 
 import "../global.css"
 import Head from "../components/head"
 import Tail from '../components/tail'
-import { Theme } from "./theme"
+import { Theme } from "../util/theme"
 
 export default function RootLayout({
   children,
@@ -13,7 +18,7 @@ export default function RootLayout({
   const setInitialTheme = `
     (function() {
       try {
-        const theme = localStorage.getItem('theme')      
+        const theme = localStorage.getItem('theme')
         document.documentElement.setAttribute('data-theme', theme)
         document.documentElement.style.colorScheme = theme
         if (theme === 'dark') document.documentElement.classList.add('dark')

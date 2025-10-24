@@ -1,3 +1,9 @@
+/*
+jononews by @jonchius
+/app/(root)/omni/form.tsx
+form that searches news items by various criteria
+*/
+
 'use client'
 
 import { useState } from 'react'
@@ -13,7 +19,7 @@ interface OmniFormProps {
 }
 
 export function OmniForm({currentTerm = '', currentPoints = 0, currentAfter = '2006-01-01', currentBefore = getTodaysDate()}: OmniFormProps) {
-  
+
   const router = useRouter()
 
   const [ term, setTerm ] = useState(currentTerm)
@@ -29,7 +35,7 @@ export function OmniForm({currentTerm = '', currentPoints = 0, currentAfter = '2
   const handleTermChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
     event.preventDefault()
     setTerm(event.target.value)
-    
+
   }
 
   const handlePointsChange = (event: React.ChangeEvent<HTMLSelectElement>): void => {
@@ -50,12 +56,12 @@ export function OmniForm({currentTerm = '', currentPoints = 0, currentAfter = '2
   return (
     <form onSubmit={handleSubmit} className="omni-form my-10">
       <div className="omni-form-grid grid grid-cols-2 md:grid-cols-5 gap-5 items-end justify-between">
-        
+
         <div className="omni-term flex flex-col">
           <label htmlFor="omniterm">{text['search term']}</label>
           <input type="text" onChange={handleTermChange} name="omniterm" className="border p-2" value={term}></input>
         </div>
-        
+
         <div className="omni-points flex flex-col">
           <label htmlFor="omnipoints">{text['minimum points']}</label>
           <select onChange={handlePointsChange} name="omnipoints" className="border p-2" value={points}>
@@ -70,7 +76,7 @@ export function OmniForm({currentTerm = '', currentPoints = 0, currentAfter = '2
             <option value="50">50</option>
             <option value="100">100</option>
             <option value="200">200</option>
-          </select>        
+          </select>
         </div>
 
         <div className="omni-after flex flex-col">
@@ -85,10 +91,10 @@ export function OmniForm({currentTerm = '', currentPoints = 0, currentAfter = '2
 
         <div className="omni-submit">
           <input type="submit" className="bg-black text-white py-3 px-5 w-full" value="Submit" />
-        </div>      
-  
-      </div>  
-      
+        </div>
+
+      </div>
+
     </form>
   )
 
