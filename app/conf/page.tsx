@@ -2,7 +2,7 @@
 jononews by @jonchius
 /app/(root)/conf/page.tsx
 configuration for users
-- set points threshold to filter news items by upvotes
+- set points threshold to filter news items by points (votes)
 */
 
 'use client'

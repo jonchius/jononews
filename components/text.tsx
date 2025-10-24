@@ -7,7 +7,7 @@ text strings for localization potential
 export const site = {
   "title emoji": "📰",
   "title" : "JONONEWS",
-  "tagline" : "customized news",
+  "tagline" : "the news your way",
 }
 
 export const text = {
@@ -27,7 +27,7 @@ export const text = {
   "after" : "after",
   "before" : "before",
   "search term" : "search term",
-  "minimum points" : "minimum upvotes",
+  "minimum points" : "minimum points",
   "article dated on or after" : "dated on/after",
   "article dated on or before" : "dated on/before",
   "configuration" : "configuration",
@@ -41,4 +41,5 @@ export const text = {
   "save" : "save",
   "saved" : "saved!",
   "omnisearch" : "omnisearch (advanced search)", 
+  "comments" : "comments", 
 }
