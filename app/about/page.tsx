@@ -28,7 +28,7 @@ export default function About() {
         <ul>
           <li>Original : started with just a <strong>simple homepage list</strong> (like the <Link href="https://news.ycombinator.com/" target="_blank">Hacker News home page</Link>) then allowed:
             <ul>
-              <li><strong>filtering by keyword</strong>: press command-K to filter by term!</li>
+              <li><strong>filtering by keyword</strong>: press command-K to filter by term, e.g. <Link href="/term/LLM">LLM</Link>!</li>
               <li><strong>filtering by year</strong>: e.g. <Link href="/year/2022">2022</Link> or <Link href="/year/2021">2021</Link> all the way back to <Link href="/year/2006">2006</Link></li>
               <li><strong>filtering by multiple variables</strong>: aka <Link href="/omni/">Omni</Link> search</li>
               <li><strong>dark mode toggle</strong>: (inside the menu)</li>
