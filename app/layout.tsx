@@ -8,6 +8,26 @@ import "../global.css"
 import Head from "../components/head"
 import Tail from '../components/tail'
 import { Theme } from "../util/theme"
+import { Metadata } from "next"
+import { site } from "../components/text"
+
+export async function generateMetadata({ params }: {
+  params: { term?: string, year?: string},  
+}): Promise<Metadata> {
+  
+  let title = site["title"]
+
+  return {
+    title,
+    description: site["tagline"],
+    openGraph: {
+      title,
+      description: site["tagline"],
+      type: 'website',
+      siteName: site["title"],
+    },
+  }
+}
 
 export default function RootLayout({
   children,
