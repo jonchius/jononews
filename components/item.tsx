@@ -35,7 +35,7 @@ export default function Item({item}: ItemProps) {
         <Link href={url} target="_blank">{title}</Link>
       </h3>
 
-      <aside className="item-meta text-gray-700 dark:text-gray-200 text-sm flex gap-1">
+      <aside className="item-meta text-gray-700 dark:text-gray-200 text-sm flex flex-wrap gap-1">
         <span className="item-date font-bold">{created_at.substring(0,10)} </span>
         <span className="item-time">@ {`${created_at.substring(11,16)} UTC`} </span>
         <span className="item-vote">({points} {text['points']}) </span>
