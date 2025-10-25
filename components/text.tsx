@@ -41,6 +41,6 @@ export const text = {
   "points threshold description" : "how many points (votes) does a news item must have to appear on this site?",
   "save" : "save",
   "saved" : "saved!",
-  "omnisearch" : "omnisearch (advanced search)", 
+  "omnisearch" : "omnisearch", 
   "comments" : "comments", 
 }
