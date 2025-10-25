@@ -16,34 +16,36 @@ export default function MenuPage() {
   const [ topics, setTopics ] = useState([])
 
   useEffect(() => {
-    
+
     // refresh custom term links
     const topicCookies = getCookie('jn-topics')
-    
+
     if (topicCookies) {
-      setTopics(topicCookies.split(',').map(item => item.trim()))      
-    } 
+      setTopics(topicCookies.split(',').map(item => item.trim()))
+    }
 
   }, [])
 
   return (
 
-    <ul className="menu-page flex list-none items-center mx-auto gap-2 text-xl border border-gray-600 border-1 p-5">
-      <li>{text["your terms"]}</li>      
-      <li><Link href="/conf" className="border border-gray-600 bg-black text-green-300 hover:text-white p-2">{topics.length > 0 ? text["update yours"] : text["add yours"]}</Link></li>
+    <ul className="menu-page flex flex-wrap list-none items-start gap-2 mx-auto text-xl border border-gray-600 border-1 p-5">
+      <li>{text["your terms"]}</li>
+      <li>
+        <Link href="/conf" className="border border-gray-600 bg-black text-green-300 hover:text-white p-2">
+          {topics.length > 0 ? text["update yours"] : text["add yours"]}
+        </Link>
+      </li>
       {topics.map((topic: string) => (
-        <li key={`menu-customlink-${topic}`}>
-          <span aria-hidden="true">[ </span>
+        <li key={`menu-customlink-${topic}`}>          
           <Link href={`/term/${topic.trim()}`}>
-            {topic.trim()} 
-          </Link>
-          <span aria-hidden="true"> ]</span>
+            {topic.trim()}
+          </Link>          
         </li>
       ))}
-    
+
     </ul>
 
   )
 
-  
+
 }
