@@ -24,7 +24,7 @@ export const NaviName = (
 ) => {
   return (
     <h2 className="navi-name text-md md:text-3xl text-black font-bold uppercase">
-      {label}
+      {decodeURIComponent(label)}
       {page ? ` / ${text['page']} ${page} ` : ''}
     </h2>
   )
