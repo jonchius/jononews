@@ -12,6 +12,7 @@ import { text } from "../../../components/text"
 import { getData, getSomeYear, getThisYear, getNextYear } from "../../../util/data"
 import Note from "../../../components/note"
 import { cookies } from "next/headers"
+import MenuPage from "../../../components/menu-page"
 
 interface MainProps {
   params: {
@@ -54,6 +55,7 @@ export default async function Main({params, searchParams}: MainProps) {
       <MainDiv className="mt-16">
 
         <Note />
+        <MenuPage />
 
         { list.length > 0 &&
 

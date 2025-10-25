@@ -13,6 +13,7 @@ import { text } from "../components/text"
 import Note from "../components/note"
 import Item from "../components/item"
 import { cookies } from "next/headers"
+import MenuPage from "../components/menu-page"
 
 interface MainProps {
   searchParams: {
@@ -48,6 +49,7 @@ export default async function Main({searchParams}: MainProps) {
       <MainDiv className="my-16">
 
         <Note />
+        <MenuPage />
 
         { list.length > 0 &&
 

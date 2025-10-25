@@ -10,7 +10,7 @@ export default function Tail () {
           
           <Link href="/about">{text['about']}</Link>
           <Link href="/omni">{text['search']}</Link>
-          <Link href="/conf">{text['configure this page']}</Link>
+          <Link href="/conf">{text['configuration']}</Link>
         </div>
       </div>
     </footer>

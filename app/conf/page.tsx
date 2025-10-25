@@ -57,7 +57,7 @@ export default function Main() {
         <div className="border border-gray-200 mt-5 p-5 flex flex-col gap-2">
 
           <label htmlFor="menulist" className="text-xl">
-            <strong>{text["menu topics"]}</strong>            
+            <strong>{text["your terms"]}</strong>            
           </label>
           
           <div className="flex flex-row">
@@ -70,7 +70,7 @@ export default function Main() {
             />
           </div>
 
-          <p><em>{text["menu topics description"]}</em></p>
+          <p><em>{text["your terms description"]}</em></p>
 
         </div>
 
