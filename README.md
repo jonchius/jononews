@@ -1,6 +1,6 @@
 # jononews
 
-displaying news headlines from [news.ycombinator.com](https://news.ycombinator.com) but with user configuration
+displaying news headlines from [news.ycombinator.com](https://news.ycombinator.com) with added user configuration for topic links
 
 ## setup
 
@@ -9,8 +9,6 @@ $ git clone https://github.com/jonchius/jononews.git
 $ npm install
 $ npm run dev
 ```
-
-## usage
 
 ## links
 

@@ -10,10 +10,11 @@ import { text } from './text'
 
 interface MenuFindProps {
   inputName: string,
-  placeholder: string
+  placeholder: string,
+  className: string
 }
 
-export const MenuFind = ({ inputName, placeholder }: MenuFindProps) => {
+export const MenuFind = ({ inputName, placeholder, className }: MenuFindProps) => {
 
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('')
@@ -30,7 +31,7 @@ export const MenuFind = ({ inputName, placeholder }: MenuFindProps) => {
   }
 
   return (
-    <div className="head-find w-full text-center text-xs md:text-xl">
+    <div className={`head-find w-full text-center text-xl ${className}`}>
       <form onSubmit={handleSubmit}>
         <input type="text" name={inputName} id={inputName} className={`p-2 text-black dark:text-white`} placeholder={placeholder} onChange={handleSearchChange} />
         <input type="submit" className={`p-2 px-5 bg-green-500 text-black`} value={text['search go button']} />

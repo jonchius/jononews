@@ -24,7 +24,7 @@ export default function Head() {
 
   const HeaderProper = ({children}: ChildrenProps) => {
     return (
-      <div className={`head-prop max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-5`}>
+      <div className={`head-prop max-w-screen-xl mx-auto flex justify-between items-center gap-5`}>
         {children}
       </div>
     )
@@ -79,7 +79,7 @@ export default function Head() {
 
         <HeaderNavigationWrapper>
 
-          <MenuFind inputName="desktop-search-in-nav" placeholder={text['search with keybinding']} />
+          <MenuFind className="hidden md:block" inputName="desktop-search-in-nav" placeholder={text['search with keybinding']} />
           <MenuFull />
 
         </HeaderNavigationWrapper>

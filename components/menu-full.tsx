@@ -58,8 +58,8 @@ export function MenuFull() {
     return (
       <div>
         <button className={`text-sm uppercase`} onClick={openMenu} id="open-menu">
-          <span className={`mr-1 text-sm md:text-2xl`} aria-hidden={true}>≡</span>
-          <span className={`mx-1 text-sm md:text-2xl`}>{text['menu']}</span>
+          <span className={`mr-1 text-2xl`} aria-hidden={true}>≡</span>
+          <span className={`mx-1 text-2xl`}>{text['menu']}</span>
           <span className={`ml-1 text-gray-400 hidden sm:inline`}>(⌘/)</span>
         </button>
       </div>
@@ -112,7 +112,7 @@ export function MenuFull() {
     return (
       <div
         className={`menu-tagline
-          block sm:hidden text-center my-2
+          block sm:hidden my-2
         `}
       >
         <span>{site['tagline']}</span>
@@ -124,7 +124,7 @@ export function MenuFull() {
     return (
       <div
         className={`menu-options
-          flex flex-col md:flex-row text-center md:justify-right items-center gap-5 mb-10 md:mb-0
+          flex flex-col sm:flex-row md:justify-right items-center gap-5 
         `}
       >
         {children}
@@ -135,7 +135,7 @@ export function MenuFull() {
   const MenuCloseOption = () => {
     return (
       <div
-        className={`menu-close mt-5 md:mt-0`}
+        className={`menu-close mt-5 sm:mt-0`}
       >
         <button onClick={closeMenu}>
           <span
@@ -207,10 +207,11 @@ export function MenuFull() {
                     <ThemeToggle />
                   </MenuOptions>
                 </MenuHead>
-                <MenuFindWrapper className={`block md:hidden`}>
+                <MenuFindWrapper className={`block lg:hidden`}>
                   <MenuFind
                     inputName={`mobile-search-in-menu`}
                     placeholder={text['search with keybinding']}
+                    className="md:hidden mt-5"
                   />
                 </MenuFindWrapper>
                 <MenuContent />

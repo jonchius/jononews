@@ -17,7 +17,6 @@ export default function MenuPage() {
 
   useEffect(() => {
 
-    // refresh custom term links
     const topicCookies = getCookie('jn-topics')
 
     if (topicCookies) {
