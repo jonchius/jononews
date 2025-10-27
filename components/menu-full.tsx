@@ -149,11 +149,31 @@ export function MenuFull() {
 
   const MenuContent = () => {
     return (
-      <ul className="menu-list list-none mx-auto py-5" onClick={closeMenu}>
-        <li className="text-3xl"><Link href="/about">{text["about"]}</Link></li>
-        <li className="text-3xl"><Link href="/conf">{text["configuration"]}</Link></li>
-        <li className="text-3xl"><Link href="/omni">{text["omnisearch"]}</Link></li>    
+      <ul className="menu-list list-none mx-auto py-5 text-3xl" onClick={closeMenu}>
+        <li><Link href="/about">{text["about"]}</Link></li>
+        <li><Link href="/conf">{text["configuration"]}</Link></li>
+        <li><Link href="/omni">{text["omnisearch"]}</Link></li>          
       </ul>
+    )
+  }
+
+  const MenuYearContent = () => {
+    const years = []
+    // 2007 is the first decent year of hacker news articles
+    for (let year = new Date().getFullYear(); year > 2006; year--) {
+      years.push({ year, points: (year-2006) * 100 })
+    }
+    return (
+      <>
+        <h2 className="text-4xl">{text["year in review"]}</h2>
+        <ul className="menu-list list-none mx-auto py-5 text-3xl flex flex-wrap" onClick={closeMenu}>
+          {years.map(({year, points}) => (
+            <li key={`menu-bestofyear-${year}`} className="mr-5">
+              <Link className="text-blue-600" href={`/year/${year}?points=${points}`}>{year}</Link>
+            </li>
+          ))}
+        </ul>        
+      </>
     )
   }
 
@@ -214,8 +234,9 @@ export function MenuFull() {
                     className="md:hidden mt-5"
                   />
                 </MenuFindWrapper>
-                <MenuContent />
+                <MenuContent />                
                 { topics.length > 0 && <MenuCustom />}
+                <MenuYearContent />
               </MenuWrapper>
             </MenuDialog>
           </div>

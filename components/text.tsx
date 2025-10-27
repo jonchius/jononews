@@ -43,4 +43,5 @@ export const text = {
   "saved" : "saved!",
   "omnisearch" : "omnisearch", 
   "comments" : "comments", 
+  "year in review" : "year in review",
 }
