@@ -44,4 +44,5 @@ export const text = {
   "omnisearch" : "omnisearch", 
   "comments" : "comments", 
   "year in review" : "year in review",
+  "skip to main content" : "skip to main content"
 }

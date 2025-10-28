@@ -10,6 +10,7 @@ import Tail from '../components/tail'
 import { Theme } from "../util/theme"
 import { Metadata } from "next"
 import { site } from "../components/text"
+import Skip from "../util/skip"
 
 export async function generateMetadata({ params }: {
   params: { term?: string, year?: string},  
@@ -54,6 +55,7 @@ export default function RootLayout({
       </head>
       <body>
         <Theme />
+        <Skip />
         <Head />
         {children}
         <Tail />

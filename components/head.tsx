@@ -16,7 +16,7 @@ export default function Head() {
 
   const HeaderFullWidthWrapper = ({children}: ChildrenProps) => {
     return (
-      <header className={`head-wrap bg-black bg-gradient-to-b from-black to-gray-700 text-white w-full sticky fixed top-0 z-40 p-5`}>
+      <header className={`head-wrap bg-black bg-gradient-to-b from-black to-gray-700 text-white w-full sticky top-0 z-40 p-5`}>
         {children}
       </header>
     )

@@ -6,7 +6,7 @@ main or div html containers
 
 export const MainDiv = ({children, className}: any) => {
   return (
-    <main className={`p-5 ${className}`}>
+    <main className={`p-5 ${className}`} id="main-content" tabIndex={-1}>
       <div className="w-screen-xl max-w-screen-xl mx-auto">
         {children}
       </div>
