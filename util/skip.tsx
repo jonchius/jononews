@@ -15,12 +15,12 @@ export default function Skip() {
     <Link 
       href="#main-content"            
       className={`
-        skip-link sr-only focus:not-sr-only 
+        sr-only focus:not-sr-only 
         focus:absolute focus:top-2 focus:left-2 
-        bg-white text-black z-50
+        focus:bg-white focus:text-black focus:z-[1000] 
       `}
     >
-      <span className="px-5 text-xl">{text['skip to main content']}</span>
+      <span className="p-5">{text['skip to main content']}</span>
     </Link>
   )
 
